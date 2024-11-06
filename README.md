@@ -14,6 +14,9 @@ https://console.neon.tech/app/projects/long-tooth-87561111/quickstart
 Map images:
 https://www.geoapify.com/get-started-with-maps-api/
 
+Google map integration:
+https://console.cloud.google.com
+
 Materials/References:
 GitHub Repository (give it a star ⭐): https://github.com/adrianhajdin/uber
 

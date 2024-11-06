@@ -1,3 +1,5 @@
+import GoogleTextInput from '@/components/GoogleTextInput'
+import Map from '@/components/Map'
 import RideCar from '@/components/RideCar'
 import { icons, images } from '@/constants'
 import { SignedIn, SignedOut, useUser } from '@clerk/clerk-expo'
@@ -122,7 +124,10 @@ const recentRides = [
 export default function Page() {
   const { user } = useUser()
   const loading = false
+
   const handleSignOut = () => {}
+
+  const handleDestinationPress = () => {}
 
   return (
     <SafeAreaView>
@@ -164,7 +169,22 @@ export default function Page() {
                 <Image source={icons.out} className="w-5 h-5" />
               </TouchableOpacity>
             </View>
-            {/* GoogleTextInput */}
+            <GoogleTextInput
+              icon={icons.search}
+              handlePress={handleDestinationPress}
+              className="bg-white shadow-md shadow-neutral-300"
+            />
+            <>
+              <Text className="text-xl font-JakartaMedium mt-5 mb-3">
+                Your Current Location
+              </Text>
+              <View className="flex-row items-center bg-transparent h-[300px]">
+                <Map />
+              </View>
+              <Text className="text-xl font-JakartaMedium mt-5 mb-3">
+                Recent Rides
+              </Text>
+            </>
           </>
         )}
       />
