@@ -178,9 +178,7 @@ export default function Page() {
               <Text className="text-xl font-JakartaMedium mt-5 mb-3">
                 Your Current Location
               </Text>
-              <View className="flex-row items-center bg-transparent h-[300px]">
-                <Map />
-              </View>
+              <Map />
               <Text className="text-xl font-JakartaMedium mt-5 mb-3">
                 Recent Rides
               </Text>
