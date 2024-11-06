@@ -1,19 +1,43 @@
-import { Text, ScrollView, View, Image } from 'react-native'
-import React, { useState } from 'react'
+import { Text, ScrollView, View, Image, Alert } from 'react-native'
+import React, { useCallback, useState } from 'react'
 import { icons, images } from '@/constants'
 import InputField from '@/components/InputField'
-import { twMerge } from 'tailwind-merge'
 import CustomButton from '@/components/CustomButton'
-import { Link } from 'expo-router'
+import { Link, useRouter } from 'expo-router'
 import OAuth from '@/components/OAuth'
+import { useSignIn } from '@clerk/clerk-expo'
 
 const SignIn = () => {
+  const { signIn, setActive, isLoaded } = useSignIn()
+  const router = useRouter()
+
   const [form, setForm] = useState({
     email: '',
     password: '',
   })
-  const onSignInPress = async () => {}
-  const Aas = 'text-2xl'
+
+  const onSignInPress = useCallback(async () => {
+    if (!isLoaded) {
+      return
+    }
+
+    try {
+      const signInAttempt = await signIn.create({
+        identifier: form.email,
+        password: form.password,
+      })
+
+      if (signInAttempt.status === 'complete') {
+        await setActive({ session: signInAttempt.createdSessionId })
+        router.replace('/')
+      } else {
+        console.error(JSON.stringify(signInAttempt, null, 2))
+      }
+    } catch (err: any) {
+      Alert.alert('Error', err.errors[0].longMessage)
+    }
+  }, [isLoaded, form.email, form.password])
+
   return (
     <ScrollView className="flex-1 bg-white">
       <View className="flex-1 bg-white">
