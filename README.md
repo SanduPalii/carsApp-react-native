@@ -11,6 +11,9 @@ https://console.neon.tech/app/projects/long-tooth-87561111/quickstart
 
 ╰─ npm install react-native-modal
 
+Map images:
+https://www.geoapify.com/get-started-with-maps-api/
+
 Materials/References:
 GitHub Repository (give it a star ⭐): https://github.com/adrianhajdin/uber
 
