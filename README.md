@@ -4,6 +4,7 @@
 
 Clerk:
 https://clerk.com/
+https://clerk.com/docs/quickstarts/expo
 
 DATA_BASE:
 https://console.neon.tech/app/projects/long-tooth-87561111/quickstart
