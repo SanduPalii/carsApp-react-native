@@ -63,7 +63,7 @@ const RideCar = ({
               Driver
             </Text>
             <Text className="text-md font-JakartaMedium text-gray-500">
-              {driver.first_name}, {driver.last_name}
+              {driver.first_name} {driver.last_name}
             </Text>
           </View>
           <View className="flex-row items-center w-full justify-between mb-5">

@@ -17,6 +17,9 @@ https://www.geoapify.com/get-started-with-maps-api/
 Google map integration:
 https://console.cloud.google.com
 
+Zustand - offers just the essential tools ("bear necessities") needed for efficient state management, making it a lightweight and efficient choice for React applications.
+https://github.com/pmndrs/zustand?tab=readme-ov-file
+
 Materials/References:
 GitHub Repository (give it a star ⭐): https://github.com/adrianhajdin/uber
 
